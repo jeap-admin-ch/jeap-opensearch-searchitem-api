@@ -1,0 +1,45 @@
+publiccodeYmlVersion: 0.5.0
+name: jeap-opensearch-searchitem-api
+applicationSuite: jEAP
+softwareVersion: 1.0.0
+releaseDate: 2026-06-15
+url: "https://github.com/jeap-admin-ch/jeap-opensearch-searchitem-api.git"
+landingURL: "https://github.com/jeap-admin-ch/jeap"
+platforms:
+  - web
+categories:
+  - application-development
+developmentStatus: stable
+softwareType: library
+organisation:
+  uri: https://ld.admin.ch/office/V.1.7
+  name: Federal Office of Information Technology, Systems and Telecommunication
+description:
+  en:
+    localisedName: jeap-opensearch-searchitem-api
+    shortDescription: Spring MVC REST API and model for exposing indexed search items from OpenSearch in jEAP applications
+    longDescription: >
+      jeap-opensearch-searchitem-api provides the SearchItemContainer model and a ready-to-use Spring MVC REST
+      controller (SearchItemsController) for exposing indexed search items via a GET /index-api/searchitems endpoint.
+      The endpoint accepts index_type, origin_id, and an optional origin_version query parameter, enforces role-based
+      access control (role searchitem:read), and returns the SearchItem JSON body together with
+      index-major-version and index-minor-version response headers.
+      Applications implement the SearchItemsProvider interface to supply items from their OpenSearch indices.
+      The multi-module layout separates the lightweight model (SearchItemContainer) from the Spring MVC controller
+      so that providers can depend on the model without pulling in the full web layer.
+    features:
+      - SearchItemContainer model pairing SearchItem with index version metadata
+      - SearchItemsController REST endpoint with role-based access control
+      - SearchItemsProvider SPI interface for application-specific item lookup
+      - Separate model and API modules for lightweight dependency management
+legal:
+  license: Apache-2.0
+maintenance:
+  type: internal
+  contacts:
+    - name: Federal Office of Information Technology, Systems and Telecommunication FOITT
+      email: jeap-community@bit.admin.ch
+localisation:
+  localisationReady: false
+  availableLanguages:
+    - en
