@@ -1,54 +1,25 @@
 # jeap-opensearch-searchitem-api
 
-Spring MVC REST API and model for exposing indexed search items from OpenSearch in jEAP applications.
-
-## Overview
-
-This multi-module project provides two libraries:
-
-- **`jeap-opensearch-searchitem-model`** — the `SearchItemContainer` record that pairs a `SearchItem` with its index version metadata
-- **`jeap-opensearch-searchitem-api`** — a ready-to-use Spring MVC REST controller and the `SearchItemsProvider` interface that applications implement to supply items from their OpenSearch indices
+Spring MVC REST API and model for exposing indexed search items from OpenSearch in jEAP
+applications. Domain services implement `SearchItemsProvider` to supply the current search
+representation of business objects to the jEAP OpenSearch Index Writer.
 
 ## Modules
 
-| Module                             | Description                                                                                          |
-|------------------------------------|------------------------------------------------------------------------------------------------------|
-| `jeap-opensearch-searchitem-model` | `SearchItemContainer` record: wraps `SearchItem<?>` with `indexMajorVersion` and `indexMinorVersion` |
-| `jeap-opensearch-searchitem-api`   | `SearchItemsController` REST endpoint, `SearchItemsProvider` SPI, `IndexTypesUtils`                  |
+| Module                             | Description                                                                                             |
+|------------------------------------|---------------------------------------------------------------------------------------------------------|
+| `jeap-opensearch-searchitem-model` | `SearchItemContainer` record — pairs a `SearchItem` with `indexMajorVersion` and `indexMinorVersion`.   |
+| `jeap-opensearch-searchitem-api`   | `SearchItemsController` REST endpoint (`GET /index-api/searchitems`) and the `SearchItemsProvider` SPI. |
 
-## Endpoint
+## Documentation
 
-`GET /index-api/searchitems` — requires role `searchitem:read`
+- [Getting started](docs/getting-started.md)
+- [SearchItem endpoint](docs/endpoint.md)
 
-| Parameter        | Required | Description                                |
-|------------------|----------|--------------------------------------------|
-| `index_type`     | yes      | The `originType` of the target `IndexType` |
-| `origin_id`      | yes      | Business object identifier                 |
-| `origin_version` | no       | Optional version filter                    |
+## Note
 
-On success the response body is the `SearchItem<?>` JSON and the response headers `index-major-version` / `index-minor-version` carry the version of the physical index the item was read from.
+This repository is part of the open source distribution of jEAP. See [github.com/jeap-admin-ch/jeap](https://github.com/jeap-admin-ch/jeap) for more information.
 
-## Usage
+## License
 
-Implement `SearchItemsProvider` and register it as a Spring bean:
-
-```java
-@Component
-public class MySearchItemsProvider implements SearchItemsProvider {
-
-    @Override
-    public Optional<SearchItemContainer> findSearchItem(
-            String indexType, String originId, String originVersion)
-            throws SearchItemsBadInputException {
-
-        // look up the item in OpenSearch and return it wrapped in SearchItemContainer
-        return Optional.of(new SearchItemContainer(majorVersion, minorVersion, searchItem));
-    }
-}
-```
-
-## Build
-
-```bash
-mvn verify
-```
+This repository is Open Source Software licensed under the [Apache License 2.0](./LICENSE).
