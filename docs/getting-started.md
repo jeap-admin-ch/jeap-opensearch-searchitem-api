@@ -12,11 +12,14 @@ controller and the `SearchItemsProvider` interface that the domain service imple
 
 ```mermaid
 flowchart LR
-    Writer[Index Writer Service] -->|GET /index-api/searchitems| Controller[SearchItemsController]
-    Controller --> Provider[SearchItemsProvider\nimpl in domain service]
-    Provider --> OpenSearch[(OpenSearch)]
-    Provider -->|SearchItemContainer| Controller
+    Writer[Index Writer Service] -->|GET /index-api/searchitems| Controller
+    subgraph DomainService[Domain Service]
+        Controller[SearchItemsController] --> Provider[SearchItemsProvider]
+        Provider -->|SearchItemContainer| Controller
+    end
+    Provider --> DataStore[(DB / S3 / ...)]
     Controller -->|SearchItem JSON| Writer
+    Writer --> OpenSearch[(OpenSearch)]
 ```
 
 ## 1. Add the dependency
