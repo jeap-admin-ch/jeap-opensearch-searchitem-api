@@ -43,7 +43,7 @@
     <properties>
         <maven.javadoc.skip>false</maven.javadoc.skip>
         <jeap-opensearch-index-type.version>1.8.0</jeap-opensearch-index-type.version>
-        <jeap-starter.version>24.0.0</jeap-starter.version>
+        <jeap-starter.version>24.1.0</jeap-starter.version>
     </properties>
 
     <dependencyManagement>
