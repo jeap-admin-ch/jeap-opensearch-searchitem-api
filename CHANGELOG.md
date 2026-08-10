@@ -12,6 +12,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - update jeap-starter from 24.9.0 to 24.10.0
 - update aws-advanced-jdbc-wrapper from 4.0.1 to 4.3.0
 - update springdoc-openapi from 3.0.3 to 3.1.0
+- update jeap-opensearch-index-type from 1.15.0 to 1.16.0
 
 ## [2.9.0] - 2026-08-08
 
