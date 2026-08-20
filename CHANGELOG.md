@@ -10,6 +10,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 - Update parent from 8.13.0 to 9.0.0
 - update jeap-opensearch-index-type from 1.23.0 to 1.24.0
+- update jeap-starter from 24.18.0 to 24.19.0
+- Fix failing token introspection when a client id contains colons by URL-encoding the client id and secret before
+  using them as basic auth credentials (see RFC 6749).
 
 ## [2.17.0] - 2026-08-19
 
