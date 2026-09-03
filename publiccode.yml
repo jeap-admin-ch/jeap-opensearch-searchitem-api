@@ -1,8 +1,8 @@
 publiccodeYmlVersion: 0.5.0
 name: jeap-opensearch-searchitem-api
 applicationSuite: jEAP
-softwareVersion: 2.24.0
-releaseDate: 2026-09-02
+softwareVersion: 2.25.0
+releaseDate: 2026-09-03
 url: "https://github.com/jeap-admin-ch/jeap-opensearch-searchitem-api.git"
 landingURL: "https://github.com/jeap-admin-ch/jeap"
 platforms:
