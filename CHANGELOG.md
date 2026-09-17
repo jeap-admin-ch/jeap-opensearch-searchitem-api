@@ -10,6 +10,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 - Update parent from 9.7.0 to 9.7.1
 - update jeap-opensearch-index-type from 1.41.0 to 1.42.0
+- update jeap-starter from 25.5.0 to 25.6.0
+- Configure the AWS JDBC Wrapper's HikariCP exception override so recoverable failover connections are not evicted.
 
 ## [3.6.0] - 2026-09-17
 
