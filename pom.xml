@@ -32,7 +32,7 @@
 
     <artifactId>jeap-opensearch-searchitem-api-parent</artifactId>
     <name>${project.groupId}:${project.artifactId}</name>
-    <version>3.18.0-SNAPSHOT</version>
+    <version>3.19.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -43,7 +43,7 @@
     <properties>
         <maven.javadoc.skip>false</maven.javadoc.skip>
         <jeap-opensearch-index-type.version>1.52.0</jeap-opensearch-index-type.version>
-        <jeap-starter.version>25.17.0</jeap-starter.version>
+        <jeap-starter.version>25.18.0</jeap-starter.version>
     </properties>
 
     <dependencyManagement>
