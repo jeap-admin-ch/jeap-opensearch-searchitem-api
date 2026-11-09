@@ -73,6 +73,14 @@ class DecreeDocumentSearchItemsProvider implements SearchItemsProvider {
 }
 ```
 
+### Serving the current data in a requested schema major
+
+Maintenance jobs request the current data of an object for a fixed schema major with
+`index_major_version`. Without further code, the default `findCurrentSearchItem` serves the major
+that `findSearchItem(indexType, originId, null)` returns and answers `422` for any other major.
+Override `findCurrentSearchItem` if your service can build more than one major. See
+[Upgrading](endpoint.md#upgrading).
+
 ## 3. Configure security
 
 The endpoint `GET /index-api/searchitems` requires the caller to hold the role `searchitem:read`.

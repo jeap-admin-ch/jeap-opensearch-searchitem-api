@@ -76,7 +76,8 @@ class SearchItemsControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(EXPECTED_SEARCH_ITEM_BODY))
                 .andExpect(header().string("index-major-version", "2"))
-                .andExpect(header().string("index-minor-version", "3"));
+                .andExpect(header().string("index-minor-version", "3"))
+                .andExpect(header().doesNotExist("index-type"));
     }
 
     @Test
@@ -98,7 +99,8 @@ class SearchItemsControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(EXPECTED_SEARCH_ITEM_BODY))
                 .andExpect(header().string("index-major-version", "2"))
-                .andExpect(header().string("index-minor-version", "3"));
+                .andExpect(header().string("index-minor-version", "3"))
+                .andExpect(header().doesNotExist("index-type"));
     }
 
     @Test

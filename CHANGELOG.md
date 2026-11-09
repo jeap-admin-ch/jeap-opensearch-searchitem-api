@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.32.0] - 2026-11-11
+
+### Added
+- Optional `index_major_version` parameter on `GET /index-api/searchitems` to request the current data of an object built for a given schema major
+- `SearchItemsProvider.findCurrentSearchItem` with a default implementation, so existing providers keep working without code changes
+- `index-type` response header and `422` problem detail (`UNSUPPORTED_INDEX_MAJOR_VERSION`) for unsupported schema majors
+- OpenAPI and endpoint documentation of current data vs. business revision, response headers, errors and upgrade path
+
 ## [3.31.0] - 2026-11-10
 
 ### Changed

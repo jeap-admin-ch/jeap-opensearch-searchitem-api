@@ -1,1 +1,3 @@
 ch.admin.bit.jeap.opensearch.searchitem.api.model.TestIndexTypeV1
+ch.admin.bit.jeap.opensearch.searchitem.api.model.TestDocumentIndexTypeV1
+ch.admin.bit.jeap.opensearch.searchitem.api.model.TestDocumentIndexTypeV2
